@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class IssuesForm {
     private  String summary;
-    private  String desctiption;
+    private  String description;
 }
