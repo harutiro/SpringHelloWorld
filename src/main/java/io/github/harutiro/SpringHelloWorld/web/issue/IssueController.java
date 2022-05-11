@@ -37,7 +37,9 @@ public class IssueController {
     //POST /issues
     @PostMapping("")
     public String create(IssuesForm form, Model model){
-        // TODO　データの永続化
+        //データの永続化
+        issueService.create(form.getSummary(),form.getDescription());
+
         return showList(model);  //TODO リロードボタン対策が必要
     }
 

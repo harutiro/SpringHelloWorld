@@ -9,9 +9,17 @@ import java.util.List;
 @RequiredArgsConstructor
 public class IssueService {
 
+    //RequiredArgsCOnstructorのおかげでNewをしなくてもよくなる。
     private final IssueRepository issueRepository;
 
+    //data渡し
     public List<IssueEntity> findAll(){
         return issueRepository.findAll();
+    }
+
+    //TODO トランザクション
+    //データを保存する部分
+    public void create(String summary, String description) {
+        issueRepository.insert(summary,description);
     }
 }
