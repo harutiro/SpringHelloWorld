@@ -1,0 +1,5 @@
+create table issues (
+id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '',
+summary VARCHAR(256) NOT NULl COMMENT '',
+description VARCHAR(256) NOT NULl COMMENT ''
+);
