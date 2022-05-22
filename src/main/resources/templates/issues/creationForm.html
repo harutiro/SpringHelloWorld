@@ -12,11 +12,16 @@
         <label for="summaryInput">概要</label>
 <!-- 　　＊選択したオブジェクトに対して、summaryを参照する。  -->
         <input type="text" id="summaryInput" th:field="*{summary}">
+
+        <p th:if="${#fields.hasErrors('summary')}" th:errors="*{summary}">(error)</p>
     </div>
 
     <div>
         <label for="descriptionInput">説明</label>
         <textarea id="descriptionInput" row="10" th:field="*{description}"></textarea>
+
+        <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}">(error)</p>
+
     </div>
 
     <div>
