@@ -2,6 +2,7 @@ package io.github.harutiro.SpringHelloWorld.domain.issue;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,9 +18,11 @@ public class IssueService {
         return issueRepository.findAll();
     }
 
-    //TODO トランザクション
     //データを保存する部分
+    @Transactional
     public void create(String summary, String description) {
         issueRepository.insert(summary,description);
+
+        //throw new IllegalStateException("NG");
     }
 }
